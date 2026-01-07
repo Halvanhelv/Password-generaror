@@ -14,34 +14,34 @@ function generatePass() {
     var result = [];
     if (document.getElementById('param-2').checked) {
         result = result.concat(arr2);
-        // копирую массив в результирующий массив
-        // Включенны ли цифры
+        // copy array to result array
+        // Are digits enabled
     }
     if (document.getElementById('param-3').checked) {
         result = result.concat(arr3);
-        // копирую массив в результирующий массив
-        // Включенны ли прописные
+        // copy array to result array
+        // Are uppercase letters enabled
     }
     if (document.getElementById('param-4').checked) {
         result = result.concat(arr4);
-        // копирую массив в результирующий массив
-        // Включенны ли строчные
+        // copy array to result array
+        // Are lowercase letters enabled
     }
 
     if (document.getElementById('param-5').checked) {
-        result = result.concat(arr5); // копирую массив в результирующий массив
-        // Включенны ли спец символы 
+        result = result.concat(arr5); // copy array to result array
+        // Are special characters enabled
     }
 
-    result.sort(compareRandom); // перемешиваю результирующий массив
+    result.sort(compareRandom); // shuffle the result array
 
     document.getElementById('out').innerHTML = '';
 for (var k = 0; k < 6; k++) {
-    var out = ''; // будущий пароль
-    var passLenght = parseInt(document.getElementById('param-1').value); // Длинна пароля
+    var out = ''; // future password
+    var passLenght = parseInt(document.getElementById('param-1').value); // Password length
     for (var i = 0; i < passLenght; i++) {
-        // Цикл по длинне пароля
-        // Выбирается случайное значение из массива result
+        // Loop through password length
+        // Random value is selected from result array
         out += result[randomInteger(0, result.length - 1)];
         //        console.log(result);    
         
